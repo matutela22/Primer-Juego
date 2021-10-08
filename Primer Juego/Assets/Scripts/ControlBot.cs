@@ -23,7 +23,6 @@ public class ControlBot : MonoBehaviour
     public void recibirDaño ()
     {
         hp = hp - 25;
-        Debug.Log("Le diste a: " + gameObject.name + ". Vida restante: " + hp);
         if (hp <= 0)
         {
             this.desaparecer();

@@ -6,32 +6,30 @@ using UnityEngine.UI;
 
 public class PuertaEnemigos : MonoBehaviour
 {
+    public List<GameObject> listaEnemigos;
+
     public Text textoEnemigosRestantes;
     private int enemigosRestantes;
-    public ControlBot bot1;
-    public ControlBot bot2;
-    private bool bot1Muerto = false;
-    private bool bot2Muerto = false;
     private bool puedoSubir = true;
     void Start()
     {
-        enemigosRestantes = 2;
-
+        enemigosRestantes = listaEnemigos.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bot1.hp <= 0 && !bot1Muerto)
+        foreach (GameObject enemigo in listaEnemigos)
         {
-            enemigosRestantes -= 1;
-            bot1Muerto = true;
-        }
 
-        if (bot2.hp <= 0 && !bot2Muerto)
-        {
-            enemigosRestantes -= 1;
-            bot2Muerto = true; 
+            if (enemigo == null)
+            {
+                enemigosRestantes -= 1;
+                listaEnemigos.Remove(enemigo);
+            }
+
+        
+
         }
 
         textoEnemigosRestantes.text = "Enemigos Restantes: " + enemigosRestantes;
