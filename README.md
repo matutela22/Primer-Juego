@@ -1,2 +1,2 @@
 # Primer-Juego
-Primer juego we
+Primer juego
