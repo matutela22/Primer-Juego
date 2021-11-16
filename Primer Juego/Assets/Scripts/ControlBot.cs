@@ -16,8 +16,10 @@ public class ControlBot : MonoBehaviour
 
     private void Update()
     {
+        
         transform.LookAt(jugador.transform);
-        transform.Translate(rapidez * Vector3.forward*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, jugador.transform.position, rapidez*Time.deltaTime);
+        
     }
 
     public void recibirDaño ()

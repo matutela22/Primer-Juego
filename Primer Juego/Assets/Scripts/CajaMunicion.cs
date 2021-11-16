@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CajaMunicion : MonoBehaviour
 {
-    public ControlJugador scriptJugador;
+    private ScriptPistola scriptPistola;
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -17,8 +17,11 @@ public class CajaMunicion : MonoBehaviour
     }
     private void OnCollisionEnter(Collision jugador)
     {
+        scriptPistola = GameObject.Find("Pistol").GetComponent<ScriptPistola>();
         desaparecerPowerUp();
-        scriptJugador.municionTotal += 30;
+        scriptPistola.municionTotal += 30;
+        SpawnerMunicion spawnerScript = GameObject.Find("SpawnerMunicion").GetComponent<SpawnerMunicion>();
+        spawnerScript.objetoRecogido = true;
     }
 
     private void desaparecerPowerUp()

@@ -10,6 +10,9 @@ TagManager:
   - "Tama\xF1o+"
   - "Tama\xF1o-"
   - Bandera
+  - Interactuable
+  - RangoDeteccion
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Piso
   - Bandera
-  - 
+  - Jugador
   - 
   - 
   - 

@@ -19,6 +19,7 @@ public class PuertaEnemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         foreach (GameObject enemigo in listaEnemigos)
         {
 

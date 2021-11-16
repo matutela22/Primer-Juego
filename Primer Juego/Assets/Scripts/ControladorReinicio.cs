@@ -8,7 +8,7 @@ public class ControladorReinicio : MonoBehaviour
     public ControlMirarCamara camara;
     private float sensibilidadActual;
 
-    public float tiempoTemporizador = 20;
+    public float tiempoTemporizador = 180;
     public GameObject temporizador;
     public GameObject menuVictoria;
     public GameObject menuDerrota;
@@ -28,7 +28,6 @@ public class ControladorReinicio : MonoBehaviour
 
     {
 
-        PasarTiempoTemporizador();
 
         if (tiempoTemporizador <= 0)
         {
@@ -50,7 +49,7 @@ public class ControladorReinicio : MonoBehaviour
 
         if (camara.gameObject.transform.position.y <= -4f)
         {
-            Restart();
+            VolverAlMenu();
         }
 
     }
@@ -70,12 +69,9 @@ public class ControladorReinicio : MonoBehaviour
         Time.timeScale = 1;
         juegoPausado = false;
     }
-    public void Restart()
+    public void VolverAlMenu()
     {
-        SceneManager.LoadScene("PrimerEscenario");
-        Time.timeScale = 1;
-        BloquearMouse();
-        juegoPausado = false;
+        SceneManager.LoadScene("MenuStart");
     }
 
 
@@ -107,10 +103,6 @@ public class ControladorReinicio : MonoBehaviour
         DesbloquearMouse();
         Time.timeScale = 0;
         menuVictoria.SetActive(true);
-    }
-    public void salirDelJuego()
-    {
-        Application.Quit();
     }
 
     void PasarTiempoTemporizador()

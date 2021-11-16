@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/PrimerEscenario.unity
+  - enabled: 0
+    path: Assets/Scenes/PrimerEscenario.unity
     guid: 83426d2dcbf24ef41a97c0f227399eb3
+  - enabled: 1
+    path: Assets/Scenes/MenuStart.unity
+    guid: ea953c3365f6aac44a08b3d4f872f8dc
+  - enabled: 1
+    path: Assets/Scenes/Bosque.unity
+    guid: a3cadf3251600f547948d6c8a6c8c321
+  - enabled: 1
+    path: Assets/Scenes/Ciudad.unity
+    guid: 5bea4eee400e5974d9c4558248bd42d1
   m_configObjects: {}
